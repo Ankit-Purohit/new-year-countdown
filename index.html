@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">HAPPY NEW YEAR COUNTDOWN 2023 </h1>
+        <div class="content">
+        <div class="con">
+            <h1 id="day">0</h1>
+            <span>Day</span>
+            
+        </div>
+        <div class="con">
+            <h1 id="hour">1</h1>
+            <span>Hour</span>
+        </div>
+        <div class="con">
+            <h1 id="min">2</h1>
+            <span>Min</span>
+        </div>
+        <div class="con">
+            <h1 id="sec">3</h1>
+            <span>Second</span>
+        </div>
+      
+        </div>
+        <div id="new">
+
+        
+        </div>
+        
+
+    </div>
+
+    
+    <script>
+       let day= document.getElementById("day");
+       let hour=document.getElementById("hour");
+       let min=document.getElementById("min");
+       let sec=document.getElementById("sec");
+       let year=document.getElementById("new");
+
+       const newYear='1 jan 2023';//where u want to go
+
+       function count(){
+           let newYearDate=new Date(newYear);
+           let currDate=new Date();
+           let total_secc=Math.floor((newYearDate-currDate)/1000);
+
+
+           let dayy= Math.floor(total_secc/3600/24);
+    
+
+           let hourr=Math.floor(total_secc/3600)%24;
+
+           let minn=Math.floor(total_secc/60)%60;
+
+           let secc=Math.floor(total_secc % 60);
+
+            // console.log(newYearDate-currDate);
+
+
+            //console.log(dayy,hourr,minn,secc);
+
+           day.innerHTML=dayy;
+           hour.innerHTML=formatTime(hourr);
+           min.innerHTML=formatTime(minn);
+           sec.innerHTML=formatTime(secc);
+
+           if(hour.textContent==0 && day.textContent==0 && min.textContent==0 && sec.textContent==0){
+               clearInterval(clear);
+               year.innerHTML="HAPPY NEW YEAR HURAYYY...";
+           }
+
+        //    console.log(year);
+
+
+
+
+       }
+       function formatTime(time){
+           return time<10?`0${time}`:time;
+       }
+       const clear=setInterval(count,1000);
+       count();
+
+
+
+    </script>
+   
+    
+</body>
+</html>

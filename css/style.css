@@ -1,0 +1,61 @@
+.container{
+    width:100%;
+    height:100%;
+     background-image: url("../images/project1.jpeg");  
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+ 
+
+
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vw;
+    /* border:2px solid green; */
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+.content{
+     /* border:2px solid red;  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10%;
+
+
+}
+.con{
+    /* border: 2px solid red; */
+    margin:0 10px;
+    color:white;
+}
+h1{
+    color:white;
+    text-align: center;
+
+}
+span{
+    /* color:red; */
+    text-align: center;
+}
+.title{
+    color:wheat
+}
+#new{
+    width:50%;
+    height:50px;
+    /* border:2px solid red; */
+    color:white;
+    margin:auto;
+
+  
+}
